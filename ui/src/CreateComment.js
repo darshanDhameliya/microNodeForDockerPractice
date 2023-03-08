@@ -4,7 +4,7 @@ export default ({postId})=>{
    const [message,updateMessage]= useState("Message for comment 1")
    const handleMySubmit= async(e) =>{
        e.preventDefault();
-       await axios.post(`http://gposts.com/api/v1/blog/post/${postId}/comment`,{message}).catch(e=>console.log(e.message))
+       await axios.post(`http://localhost:4002/api/v1/blog/post/${postId}/comment`,{message}).catch(e=>console.log(e.message))
        updateMessage('')
    }
 

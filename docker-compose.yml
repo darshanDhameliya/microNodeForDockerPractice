@@ -1,0 +1,20 @@
+version: '3'
+services:
+  blogcomment:
+    build: ./blogcomment/
+    ports:
+      - 4002:4002
+  blogpost:
+    build: ./blogpost/
+    ports:
+      - 4001:4001
+  eventbus:
+    build: ./eventbus/
+  query-service:
+    build: ./QueryService/
+    ports:
+      - 4003:4003
+  ui:
+    build: ./ui/
+    ports:
+      - 3000:3000
