@@ -13,9 +13,9 @@ const event =  req.body; //type,data
 //creating a list of all events for query failure
 events.push(event)
 //echoing the event to all
-axios.post("http://localhost:4001/eventbus/event/listener",event).catch(e=>console.log(e.message));
-axios.post("http://localhost:4002/eventbus/event/listener",event).catch(e=>console.log(e.message));
-axios.post("http://localhost:4003/eventbus/event/listener",event).catch(e=>console.log(e.message)); //echo data to all
+axios.post("http://blogpost:4001/eventbus/event/listener",event).catch(e=>console.log(e.message));
+axios.post("http://blogcomment:4002/eventbus/event/listener",event).catch(e=>console.log(e.message));
+axios.post("http://query-service:4003/eventbus/event/listener",event).catch(e=>console.log(e.message)); //echo data to all
 resp.send({});
 });
 //sending all the events.

@@ -40,7 +40,7 @@ app.post("/eventbus/event/listener",(req,resp)=>{
 
  app.listen(4003,async ()=>{
      //get all events that have occured
-     const resp = await axios.get('http://localhost:4005/eventbus/event').catch(e=>console.log(e.message));
+     const resp = await axios.get('http://eventbus:4005/eventbus/event').catch(e=>console.log(e.message));
      const events = resp.data;
      for(let e of events){
          handleEvent(e.type,e.data);

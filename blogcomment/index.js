@@ -23,7 +23,7 @@ app.post('/api/v1/blog/post/:postId/comment',async (req,resp)=>{
     comments.push({commentId,message})
     postsWithComments[postId] = comments
          //event after successfull addition of Blogpost, we need to send an event to eventbus.
-         await axios.post("http://localhost:4005/eventbus/event",{
+         await axios.post("http://eventbus:4005/eventbus/event",{
           type:"Comment Created",
           data:{postId,commentId,message}
        }).catch(e=>console.log(e.message))
